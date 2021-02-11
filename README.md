@@ -3,6 +3,7 @@
 
 This repository contains the code to setup the final evaluation of the course "[Machine Learning: Project](https://onderwijsaanbod.kuleuven.be/syllabi/e/H0T25AE.htm)" (KU Leuven, Faculty of engineering, Department of Computer Science, [DTAI research group](https://dtai.cs.kuleuven.be)).
 
+
 ## Use on departmental computeres
 
 OpenSpiel is pre-installed in the following virtual environment:
@@ -10,6 +11,9 @@ OpenSpiel is pre-installed in the following virtual environment:
 ```
 /cw/ml-project/venv
 ```
+
+Note that the Python version is 3.6. Thus avoid language features that are not compatible with versino 3.6 such that your agent can be used in the tournament.
+
 
 ## Local installation
 
@@ -51,5 +55,35 @@ To submit your agent, a copy of you code and agent needs to be available on the 
 The departmental computers have openspiel and its dependencies installed such that you can verify that your agent works. During the semester the tournament script will be run to play games between the (preliminary) agents that are already available. A tentative ranking will be shared.
 
 
+## FAQ
 
+### Installation cannot find tensorflow
+
+Tensorflow is not compatible with Python3.9 use Python3.8 or older.
+
+On macos you can use an older version by running these commands before the install script:
+
+```
+brew install python@3.8  # if using homebrew
+virtualenv -p /usr/local/opt/python@3.8/bin/python3 venv
+. ./venv/bin/activate
+```
+
+### Module absl not found
+
+Install the absl-py package:
+
+```
+pip install absl-py
+```
+
+### openspiel or pyspiel not found
+
+First, check if the `pyspiel` module is available in `build/python`. If it's absent compilation failed. Try compiling again.
+
+Second, make sure the modules can be found by Python by setting the `PYTHONPATH` environment variable:
+
+```
+export PYTHONPATH=.:./build/python:$PYTHONPATH
+```
 
