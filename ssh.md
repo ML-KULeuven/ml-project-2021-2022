@@ -91,12 +91,9 @@ You can now connect with
 On Windows, you use the graphical interface of PuTTY. You first complete
 the configuration by setting:
 
--   Session $\rightarrow$ Host Name (or IP address) = st.cs.kuleuven.be
-
--   Session $\rightarrow$ Port = 22
-
--   Connection$\rightarrow$ Data $\rightarrow$ Auto-login username =
-    r0123456
+- Session → Host Name (or IP address) = st.cs.kuleuven.be
+- Session → Port = 22
+- Connection → Data → Auto-login username = r0123456
 
 Then you save it in the *Session* tab by writing *pcroom* in *Saved
 Sessions* and hitting *Save*.
@@ -138,24 +135,14 @@ to the configuration file. Here is a complete example:
 
 In Windows a proxy can be setup through PuTTY as follows:
 
--   Session $\rightarrow$ Host Name (or IP address) =
-    aalst.cs.kotnet.kuleuven.be
-
--   Session $\rightarrow$ Port = 22
-
--   Connection$\rightarrow$ Data $\rightarrow$ Auto-login username =
-    r0123456
-
--   Connection$\rightarrow$ Proxy $\rightarrow$ Proxy type = local
-
--   Connection$\rightarrow$ Proxy $\rightarrow$ Proxy hostname =
-    st.cs.kuleuven.be
-
--   Connection$\rightarrow$ Proxy $\rightarrow$ Port = 22
-
--   Connection$\rightarrow$ Proxy $\rightarrow$ Username = r0123456
-
--   Connection$\rightarrow$ Proxy $\rightarrow$ Telnet command, or local
+-   Session → Host Name (or IP address) = aalst.cs.kotnet.kuleuven.be
+-   Session → Port = 22
+-   Connection → Data → Auto-login username = r0123456
+-   Connection → Proxy → Proxy type = local
+-   Connection → Proxy → Proxy hostname = st.cs.kuleuven.be
+-   Connection → Proxy → Port = 22
+-   Connection → Proxy → Username = r0123456
+-   Connection → Proxy → Telnet command, or local
     proxy command = plink %user@%proxyhost nc %host %port
 
 Then you save it in the *Session* tab by writing *aalst* in *Saved
