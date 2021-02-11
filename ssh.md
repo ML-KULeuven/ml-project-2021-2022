@@ -283,8 +283,8 @@ safe place if you need to keep it.
 
 ### Course directory
 
-`/cw/w3users/bdap/`
+`/cw/w3users/ml-project/`
 
 This folder contains everything you need on the departmental machines
-for the course, such as data and software. The folder is accessible from
+for the course. The folder is accessible from
 all the departmental machines but not from the login node.
