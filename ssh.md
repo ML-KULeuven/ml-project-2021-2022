@@ -1,11 +1,6 @@
----
-author:
-- |
-  Jessa Bekker\
-  `jessa.bekker@cs.kuleuven.be`
-date: October 2016
-title: Using the departmental machines remotely
----
+
+# Using the departmental machines remotely
+
 
 This document is a guide for using the departmental machines remotely.
 You can access the machines with a secure connection through SSH. This
@@ -13,13 +8,13 @@ connection can be used for executing commands on the remote machine,
 tunneling through a firewall, and transfering files to and from a remote
 machine.
 
-# Installing the SSH client
+## Installing the SSH client
 
-## Unix
+### Unix
 
 Unix system usually have a SSH client pre-installed.
 
-## Windows
+### Windows
 
 We advise you to use PuTTY, a free SSH client for Windows that can be
 downloaded on
@@ -33,7 +28,7 @@ binaries together in a folder. You can invoke all the binaries in this
 folder from terminal as long as either you are in the folder or the
 folder is in your `$PATH`.
 
-# Obtaining a SSH key pair
+## Obtaining a SSH key pair
 
 To connect to a remote computer, you can use an SSH key pair. The pair
 consists of a private key and a public key. The private key is kept on
@@ -49,9 +44,9 @@ PuTTY needs the private key to be in `.ppk` format. PuTTYgen can
 transform your key to the right format by first loading the existing key
 and then saving it.
 
-# Configuring SSH and running remote commands
+## Configuring SSH and running remote commands
 
-## A simple connection
+### A simple connection
 
 SSH is usually ran through a terminal. You can open a terminal on
 Windows with `<Windows>-r`    Open: *cmd*. We can make a connection to a
@@ -67,7 +62,7 @@ remote machine by opening a terminal and running:
          % plink <username>@<remoteMachine> -i <pathToPrivateKey.pkk>
          % plink r0123456@st.cs.kuleuven.be -i path/to/id_rsa.pkk
 
-## Configuration
+### Configuration
 
 To avoid typing the key location every time, you can make sure that the
 ssh client finds it automatically. On Unix systems, you do this by
@@ -110,7 +105,7 @@ You can now connect with
 
      % plink pcroom
 
-## Getting passed the login node
+### Getting passed the login node
 
 The `st.cs.kuleuven.be` server is a login node, it is not meant to run
 experiments. The machines that you can run experiments on have the
@@ -127,7 +122,7 @@ This is possible because your private keys were stored automatically in
 agent and configuration file here the same way as on your personal
 computer.
 
-### Proxy {#proxy .unnumbered}
+#### Proxy
 
 You can immediately get to a departmental machine by setting up a proxy.
 On Unix systems, this can be done by adding
@@ -170,7 +165,7 @@ You can now connect with
 
      % plink aalst
 
-# List of available machines
+## List of available machines
 
 The page <http://mysql.cs.kotnet.kuleuven.be/> gives an overview of the
 available departmental machines and their current load.
@@ -192,7 +187,7 @@ Set up the tunnel by entering:
 
 Now you can reach the website at <http://localhost:10080/>
 
-# Remote copying
+## Remote copying
 
 Making a remote copy is similar to making a local copy in the unix
 terminal. The command for a local copy is:
@@ -231,7 +226,7 @@ is the same, but this command will analyze the difference between the
 source and destination and only copy what is necessary, thus being more
 efficient.
 
-# Safely running experiments with "screen"
+## Safely running experiments with "screen"
 
 Screen is a useful application for running experiments remotely because
 it allows you to:
@@ -277,9 +272,9 @@ another key. These are the most common ones:
 
 You can reattach to a detached screen by running `screen -r`
 
-# Useful directories
+## Useful directories
 
-## Home directory
+### Home directory
 
 `/home/r0123456/`
 
@@ -290,7 +285,7 @@ know the limit and your current usage run:
 
      % quota
 
-## Local space
+### Local space
 
 `/tmp/`
 
@@ -299,7 +294,7 @@ regularly, so do not store anything important here. It is the perfect
 place for heavy output of experiments, just make sure to copy it to a
 safe place if you need to keep it.
 
-## Course directory
+### Course directory
 
 `/cw/w3users/bdap/`
 
