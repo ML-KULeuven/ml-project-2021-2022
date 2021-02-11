@@ -3,22 +3,35 @@
 
 This repository contains the code to setup the final evaluation of the course "[Machine Learning: Project](https://onderwijsaanbod.kuleuven.be/syllabi/e/H0T25AE.htm)" (KU Leuven, Faculty of engineering, Department of Computer Science, [DTAI research group](https://dtai.cs.kuleuven.be)).
 
-## Installation
+## Use on departmental computeres
 
-You will need `openspiel` version 2 or higher (and its dependencies).
+OpenSpiel is pre-installed in the following virtual environment:
 
-It is recommended to install from source because you need the version with ACPC included to have access to the poker game. Follow the instructions on https://openspiel.readthedocs.io/en/latest/install.html#installation-from-source and make sure to set the following environment variable to true before compiling:
-
-```sh
-export BUILD_WITH_ACPC="ON"
+```
+/cw/ml-project/venv
 ```
 
-After compilation, you should have access to the `universal_poker` game:
+## Local installation
 
-```sh
-cd /path/to/openspiel/
+This section describes how get started with using FCPA in OpenSpiel.
+
+First, install OpenSpiel as [described on the github site](https://openspiel.readthedocs.io/en/latest/install.html#installation-from-source). Importantly, you must prepend a flag that will ensure it compiles the optional dependency on the [ACPC poker engine](http://www.computerpokercompetition.org/).
+
+```
+cd /path/to/open_spiel
+BUILD_WITH_ACPC=ON ./install.sh
+BUILD_WITH_ACPC=ON ./open_spiel/scripts/build_and_run_tests.sh
+
+# Fix to PYTHONPATH, reload shell if necessary, etc.
 . ./venv/bin/activate
-python3 open_spiel/python/examples/example.py --game=universal_poker
+python3 open_spiel/python/examples/poker_fcpa_example.py
+```
+
+This will run two random players in FCPA poker. You can also play fixed policies like always-call and always-fold, in addition to playing against them yourself on the keyboard by passing flags:
+
+```
+python3 python/examples/poker_fcpa_example.py \ 
+    --player0=random --player1=human
 ```
 
 
@@ -31,8 +44,12 @@ The tournament will be played with agents that are available on the departmental
 - Your agent should be ready to play in a few seconds, thus use a pre-trained policy. An agent that is not responsding after 10 seconds will forfait the game.
 
 
-## Submission
+## Submission using the Departmental Computers
 
-To submit your agent, your code needs to be available on the departmental computers in a directory assigned to you (only your custom code, openspiel and other libraries are provided). Also the code to train your agent should be included.
+To submit your agent, a copy of you code and agent needs to be available on the departmental computers in a directory assigned to you (only your own code, openspiel and other libraries are provided). Also the code to train your agent should be included.
+
+The departmental computers have openspiel and its dependencies installed such that you can verify that your agent works. During the semester the tournament script will be run to play games between the (preliminary) agents that are already available. A tentative ranking will be shared.
+
+
 
 
