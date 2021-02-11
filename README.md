@@ -59,7 +59,7 @@ The departmental computers have openspiel and its dependencies installed such th
 
 ### Installation cannot find tensorflow
 
-Tensorflow is not compatible with Python3.9 use Python3.8 or older.
+Tensorflow is not compatible with Python3.9 use Python3.8 or earlier.
 
 On macos you can use an older version by running these commands before the install script:
 
@@ -71,10 +71,10 @@ virtualenv -p /usr/local/opt/python@3.8/bin/python3 venv
 
 ### Module absl not found
 
-Install the absl-py package:
+Install the required packages (in the virtual environment).
 
 ```
-pip install absl-py
+pip install -r requirements.txt
 ```
 
 ### openspiel or pyspiel not found
