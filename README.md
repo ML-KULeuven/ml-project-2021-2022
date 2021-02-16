@@ -6,10 +6,18 @@ This repository contains the code to setup the final evaluation of the course "[
 
 ## Use on departmental computeres
 
+*Note: You will be notified when the directories on the departmental servers are available.*
+
+You will see a personal directory in:
+
+```
+/cw/lvs/NoCsBack/vakken/H0T25A
+```
+
 OpenSpiel is pre-installed in the following virtual environment:
 
 ```
-/cw/ml-project/venv
+/cw/lvs/NoCsBack/vakken/H0T25A/venv
 ```
 
 Note that the Python version is 3.6. Thus avoid language features that are not compatible with versino 3.6 such that your agent can be used in the tournament.
