@@ -1,7 +1,7 @@
 
 # ML Project 2021
 
-This repository contains the code to setup the final evaluation of the course "[Machine Learning: Project](https://onderwijsaanbod.kuleuven.be/syllabi/e/H0T25AE.htm)" (KU Leuven, Faculty of engineering, Department of Computer Science, [DTAI research group](https://dtai.cs.kuleuven.be)).
+This repository contains the code to setup the final evaluation of the course "[Machine Learning: Project](https://onderwijsaanbod.kuleuven.be/syllabi/e/H0T25AE.htm)" (KU Leuven, Faculty of Engineering, Department of Computer Science, [DTAI Section](https://dtai.cs.kuleuven.be)).
 
 
 ## Use on departmental computeres
@@ -20,7 +20,7 @@ OpenSpiel is pre-installed in the following virtual environment:
 /cw/lvs/NoCsBack/vakken/H0T25A/venv
 ```
 
-Note that the Python version is 3.6. Thus avoid language features that are not compatible with versino 3.6 such that your agent can be used in the tournament.
+Note that the Python version is 3.6. Thus avoid language features that are not compatible with version 3.6 such that your agent can be used in the tournament.
 
 
 ## Local installation
