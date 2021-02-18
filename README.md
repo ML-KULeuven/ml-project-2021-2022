@@ -14,6 +14,8 @@ You will see a personal directory in:
 /cw/lvs/NoCsBack/vakken/ac2021/H0T25A/ml-project/
 ```
 
+There is an upperlimit of 50MB on the space that you can use.
+
 OpenSpiel and other packages that you can use are pre-installed in the following virtual environment:
 
 ```
