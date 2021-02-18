@@ -283,8 +283,7 @@ safe place if you need to keep it.
 
 ### Course directory
 
-`/cw/w3users/ml-project/`
+`/cw/lvs/NoCsBack/vakken/ac2021/H0T25A/ml-project/r0123456`
 
-This folder contains everything you need on the departmental machines
-for the course. The folder is accessible from
-all the departmental machines but not from the login node.
+This folder is your personal space for submitting your implementation. The folder is accessible from
+all the departmental machines but not from the login node. There is an upperlimit of 50MB.
