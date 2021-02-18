@@ -4,24 +4,31 @@
 This repository contains the code to setup the final evaluation of the course "[Machine Learning: Project](https://onderwijsaanbod.kuleuven.be/syllabi/e/H0T25AE.htm)" (KU Leuven, Faculty of Engineering, Department of Computer Science, [DTAI Section](https://dtai.cs.kuleuven.be)).
 
 
-## Use on departmental computeres
+## Use on departmental computers
 
-*Note: You will be notified when the directories on the departmental servers are available.*
+The departmental computers will be used to run a tournament and submit your implementation (see detailed instructions below). Additionally, they can be used to train your agents. Due to the current Covid restrictions, it is not possible to access these computers physically. A tutorial to connect via SSH can be found [here](ssh.md) and additional info is available on [the departmental web pages](https://system.cs.kuleuven.be/cs/system/wegwijs/computerklas/index-E.shtml).
 
 You will see a personal directory in:
 
 ```
-/cw/lvs/NoCsBack/vakken/H0T25A
+/cw/lvs/NoCsBack/vakken/ac2021/H0T25A/ml-project/
 ```
 
-OpenSpiel is pre-installed in the following virtual environment:
+OpenSpiel and other packages that you can use are pre-installed in the following virtual environment:
 
 ```
-/cw/lvs/NoCsBack/vakken/H0T25A/venv
+/cw/lvs/NoCsBack/vakken/ac2021/H0T25A/ml-project/venv
 ```
 
-Note that the Python version is 3.6. Thus avoid language features that are not compatible with version 3.6 such that your agent can be used in the tournament.
+Since this virtual environment will be used to run the tournament, you should avoid language features that are not compatible with the installed Python version (3.6.9) or use packages that are not installed. 
 
+If you prefer to program in C++, you can find up-to-date versions of cmake and clang in:
+
+```
+/cw/lvs/NoCsBack/vakken/ac2021/H0T25A/ml-project/software
+```
+
+Although, note that you will still have to write a Python wrapper to be able to participate in the tournament.
 
 ## Local installation
 
