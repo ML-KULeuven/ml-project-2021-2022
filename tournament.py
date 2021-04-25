@@ -45,7 +45,7 @@ def load_agents_from_dir(path):
     """
     agents = {}
     for agent_path in Path(path).glob('**/fcpa_agent.py'):
-        agent_id = agent_path.parts[0]
+        agent_id = agent_path.relative_to(path).parts[0]
         agents[agent_id] = {
             'id':  agent_id,
             'agent_p1': load_agent(agent_path, 0),
