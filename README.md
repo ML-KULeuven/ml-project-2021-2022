@@ -3,7 +3,6 @@
 
 This repository contains the code to setup the final evaluation of the course "[Machine Learning: Project](https://onderwijsaanbod.kuleuven.be/syllabi/e/H0T25AE.htm)" (KU Leuven, Faculty of Engineering, Department of Computer Science, [DTAI Section](https://dtai.cs.kuleuven.be)).
 
-
 ## Use on departmental computers
 
 The departmental computers will be used to run a tournament and submit your implementation (see detailed instructions below). You can also use these computers to train your agents. A tutorial to connect remotely via SSH can be found [here](ssh.md) and additional info is available on [the departmental web pages](https://system.cs.kuleuven.be/cs/system/wegwijs/computerklas/index-E.shtml).
@@ -62,6 +61,30 @@ The tournament will be played with agents that are available on the departmental
 - The tournament code will scrape the directory provided for you on the departmental computers for the `fcpa_agent.py` file and call the `get_agent_for_tournament` method. If multiple matching files are found, a random one will be used.
 - Your agent should be ready to play in a few seconds, thus use a pre-trained policy. An agent that is not responding after 10 seconds will forfeit the game.
 
+Make sure you **do not use relative paths** in your implementation to load your trained model, as this will fail when running your agent from a different directory. Best practice is to retrieve the absolute path to the module directory:
+
+```python
+package_directory = os.path.dirname(os.path.abspath(__file__))
+```
+
+Afterwards, you can load your resources based on this `package_directory`:
+
+```python
+model_file = os.path.join(package_directory, 'models', 'mymodel.pckl')
+```
+
+If you use Tensorflow you cannot use the **default graph**. This will give problems when playing against other agents in the tournament. You can use the following code to create a new graph:
+
+```python
+self.graph = tf.Graph()
+sess = tf.Session(graph=self.graph)
+sess.__enter__()
+with self.graph.as_default():
+    pass  # code needing sess goes here
+```
+
+If you prefer to program in C++, you can also use OpenSpiel's C++ API. Although, you will still have to write a Python wrapper to be able to participate in the tournament. To compile C++ code on the departmental computers you can use the g++ compiler.
+
 
 ## Submission using the Departmental Computers
 
@@ -74,7 +97,7 @@ The departmental computers have openspiel and its dependencies installed such th
 
 ### Installation cannot find tensorflow
 
-Tensorflow is not compatible with Python3.10 use Python3.9 or earlier.
+Tensorflow is not compatible with Python3.10. Use Python3.9 or earlier.
 
 On macOS you can use an older version by running these commands before the install script:
 
@@ -102,6 +125,8 @@ Second, make sure the modules can be found by Python by setting the `PYTHONPATH`
 export PYTHONPATH=.:./build/python:$PYTHONPATH
 ```
 
+If you encounter this error on the departmental computers, make sure to activate the virtual environment (see above).
+
 ### Compilation fails on 'Return statement with no value'
 
 Most compilers will allow an empty return statement, but some do not.
@@ -111,5 +136,4 @@ open_spiel/open_spiel/higc/referee_test.cc:229:47: error: return-statement with 
   229 |   if (absl::GetFlag(FLAGS_run_only_blocking)) return;
 ```
 
-You can easily fix this by adding replace `return;` with `return 0;` in the source code.
-
+You can easily fix this by replacing `return;` with `return 0;` in the source code.

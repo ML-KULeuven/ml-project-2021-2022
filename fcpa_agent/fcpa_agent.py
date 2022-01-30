@@ -75,7 +75,10 @@ def test_api_calls():
     """This method calls a number of API calls that are required for the
     tournament. It should not trigger any Exceptions.
     """
-    fcpa_game_string = pyspiel.hunl_game_string("fcpa")
+    fcpa_game_string = (
+        "universal_poker(betting=nolimit,numPlayers=2,numRounds=4,blind=100 50,"
+        "firstPlayer=2 1 1 1,numSuits=4,numRanks=13,numHoleCards=2,numBoardCards=0 3 1 1,"
+        "stack=20000 20000,bettingAbstraction=fcpa)")
     game = pyspiel.load_game(fcpa_game_string)
     bots = [get_agent_for_tournament(player_id) for player_id in [0,1]]
     returns = evaluate_bots.evaluate_bots(game.new_initial_state(), bots, np.random)
