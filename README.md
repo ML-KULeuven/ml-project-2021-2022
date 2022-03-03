@@ -10,7 +10,7 @@ The departmental computers will be used to run a tournament and submit your impl
 You will see a personal directory in:
 
 ```
-/cw/lvs/NoCsBack/vakken/ac2021/H0T25A/ml-project/
+/cw/lvs/NoCsBack/vakken/ac2122/H0T25A/ml-project
 ```
 
 There is an upper limit of 50MB on the disk space that you can use. Remote (ssh) users are also limited to 2GB of RAM.
@@ -18,7 +18,7 @@ There is an upper limit of 50MB on the disk space that you can use. Remote (ssh)
 OpenSpiel and other packages that you can use are pre-installed in a virtual environment, which can be activated using:
 
 ```
-source /cw/lvs/NoCsBack/vakken/ac2021/H0T25A/ml-project/venv/bin/activate
+source /cw/lvs/NoCsBack/vakken/ac2122/H0T25A/ml-project/venv/bin/activate
 ```
 
 Since this virtual environment will be used to run the tournament, you should avoid language features that are not compatible with the installed Python version (3.8.10) or use packages that are not installed. All of OpenSpiel's [required](https://github.com/deepmind/open_spiel/blob/v1.0.2/requirements.txt) and [optional](https://github.com/deepmind/open_spiel/blob/v1.0.2/open_spiel/scripts/python_extra_deps.sh) dependencies are currently installed.
