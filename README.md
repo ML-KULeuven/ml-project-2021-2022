@@ -39,10 +39,13 @@ Importantly, you must install from source and prepend a flag that will ensure it
 cd /path/to/open_spiel
 OPEN_SPIEL_BUILD_WITH_ACPC=ON ./install.sh
 OPEN_SPIEL_BUILD_WITH_ACPC=ON ./open_spiel/scripts/build_and_run_tests.sh
+```
 
-# Fix to PYTHONPATH, reload shell if necessary, etc.
-. ./venv/bin/activate
-python3 open_spiel/python/examples/poker_fcpa_example.py
+Next, update your `PYTHONPATH` as discussed in [OpenSpiel's installation instructions](https://openspiel.readthedocs.io/en/latest/install.html#installation-from-source), reload the shell if necessary, and activate the virtual environment.
+To make sure everything works, you can try to execute the example script:
+
+```
+python3 python/examples/poker_fcpa_example.py
 ```
 
 This will run two random players in FCPA poker. You can also play fixed policies like always-call and always-fold, in addition to playing against them yourself on the keyboard by passing flags:
