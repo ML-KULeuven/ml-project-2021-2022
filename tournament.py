@@ -121,7 +121,7 @@ def cli(agent1_id, agent1_dir, agent2_id, agent2_dir, output, rounds, seed):
 
     # Create the game
     fcpa_game_string = (
-        "universal_poker(betting=nolimit,numPlayers=2,numRounds=4,blind=100 50,"
+        "universal_poker(betting=nolimit,numPlayers=2,numRounds=4,blind=150 100,"
         "firstPlayer=2 1 1 1,numSuits=4,numRanks=13,numHoleCards=2,numBoardCards=0 3 1 1,"
         "stack=20000 20000,bettingAbstraction=fcpa)")
     logger.info("Creating game: {}".format(fcpa_game_string))
